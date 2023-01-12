@@ -12,13 +12,13 @@ export VISUAL=hx
 export EDITOR=$VISUAL
 
 # Third party software & manager
-export VOLTA_HOME="$HOME/.volta"
 export GOPATH="$HOME/.go"
-export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 
 #     ____  __            _
 #    / __ \/ /_  ______ _(_)___  _____
@@ -118,42 +118,44 @@ alias down="cd ~/Downloads"
 alias ..="cd .."
 alias ....="cd ../.."
 alias celar="clear"
-alias kawaii="brew update && \
-        brew upgrade && brew \
-        autoremove && brew   \
-        cleanup && brew doctor"
 
 # Made with Rust
-alias top="btop"
-alias cat="bat"
-alias ls="exa"
-alias sl="exa"
-alias ps="procs"
-alias grep="rg"
-alias search="rg"
-alias look="fd"
-alias find="fd"
-alias ping="gping"
-alias time="hyperfine"
-alias j="just"
-alias make="just"
+command -v btop > /dev/null && alias top="btop"
+command -v bat > /dev/null && alias cat="bat"
+command -v exa > /dev/null && alias ls="exa"
+command -v exa > /dev/null && alias sl="exa"
+command -v procs > /dev/null && alias ps="procs"
+command -v rg > /dev/null && alias grep="rg"
+command -v rg > /dev/null && alias search="rg"
+command -v fd > /dev/null && alias look="fd"
+command -v fd > /dev/null && alias find="fd"
+command -v gping > /dev/null && alias ping="gping"
+command -v hyperfine > /dev/null && alias time="hyperfine"
+command -v just > /dev/null && alias j="just"
+command -v just > /dev/null && alias make="just"
 
 # Refresh
 alias refresh="source ~/.zshrc"
 
-# Vim
-alias vim="hx"
-alias vi="hx"
+# Vim (if MacOS or else Arch Linux)
+command -v hx > /dev/null && alias vi="hx"
+command -v hx > /dev/null && alias vim="hx"
+command -v helix > /dev/null && alias vi="helix"
+command -v helix > /dev/null && alias vim="helix"
 
 # Others (Developer)
-alias rit="gitui"
 alias ports="lsof -PiTCP -sTCP:LISTEN"
-alias gc="git -c http.sslVerify=false clone"
-alias git="git -c http.sslVerify=false"
-alias gch="git checkout"
-alias xclip="xclip -selection c"
+command -v gitui > /dev/null && alias rit="gitui"
+command -v git > /dev/null && alias gch="git checkout"
+command -v xclip > /dev/null && alias xclip="xclip -selection c"
 alias speedtest="curl -o /dev/null cachefly.cachefly.net/100mb.test"
-alias update="softwareupdate"
+command -v git > /dev/null && alias git="git -c http.sslVerify=false"
+command -v git > /dev/null && alias gc="git -c http.sslVerify=false clone"
+
+# Updating the system
+command -v pacman > /dev/null && alias update="sudo pacman -Syyu"
+command -v softwareupdate > /dev/null && alias update="softwareupdate"
+
 
 #     ______                 __  _
 #    / ____/_  ______  _____/ /_(_)___  ____  _____
