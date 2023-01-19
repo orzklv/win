@@ -1,0 +1,13 @@
+layout: oneline
+date: '+%X %d/%m'
+hyperlink: auto
+symlink-arrow: ⇒
+
+blocks:
+  - permission
+  - size
+  - date
+  - name
+
+color:
+  when: always
