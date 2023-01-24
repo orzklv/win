@@ -4,7 +4,7 @@
 
 My dotfiles for my machines to maintain my own development environment.
 
-[![GitHub top language](https://img.shields.io/github/languages/top/katsuki-yuri/website?style=flat-square&logo=github)](https://github.com/katsuki-yuri/website)
+[![GitHub top language](https://img.shields.io/github/languages/top/katsuki-yuri/dots?style=flat-square&logo=github)](https://github.com/katsuki-yuri/dots)
 [![Channel](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/yurionblog)
 [![Test CI](https://github.com/katsuki-yuri/website/actions/workflows/test.yml/badge.svg)](https://github.com/katsuki-yuri/website/actions/workflows/test.yml)
 
@@ -12,9 +12,10 @@ My dotfiles for my machines to maintain my own development environment.
 
 ## About
 
-The Website runs on top of the latest version of Next.js and Node.js. Pretty nothing special. Just a website built with React components and css.
+In this repository I keep all my configurations and dot files to maintain my healthy development environment for any case. It contains configurations
+for shell and environments like zsh (arch-linux, macos), powershell (windows). It comes with installer to shorten my time spending on set up.
 
-> I host all contents statically, so you may correct me up by sending a pull request.
+> Everytime I installed my dev env manually by myself, I started feeling like a garbage myself... So here you are!
 
 ## Features
 
@@ -24,7 +25,7 @@ The Website runs on top of the latest version of Next.js and Node.js. Pretty not
 - Spotify live integration
 - Docker image for easy deployment
 
-## Development
+## Install
 
 In order to run the website, just install the latest LTS version of Node.js (it's 18.x.x at the moment) and make sure you have pnpm installed globally. Then run
 the following commands:
