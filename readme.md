@@ -19,29 +19,25 @@ for shell and environments like zsh (arch-linux, macos), powershell (windows). I
 
 ## Features
 
-- Markdown content renders
-- Minecraft server status api
-- Additional contents (like my favorite musics)
-- Spotify live integration
-- Docker image for easy deployment
+- Syntax Highlighting
+- Auto Completions
+- Auto Suggestions
+- Rust made replacements
+- Key configurations
+- Software configurations
 
-## Install
+## Install (Automatic)
 
-In order to run the website, just install the latest LTS version of Node.js (it's 18.x.x at the moment) and make sure you have pnpm installed globally. Then run
-the following commands:
+This process can be tough and easy at the same time depending on yourself... If you prefer trusting me and let me do all the dirty stuff, then just run the install script located on the root location of the project like this:
 
-```bash
-pnpm install
-pnpm run dev
+```shell
+# I'm not evil, check the source code if you don't trust me!
+sudo ./install.sh && echo "Yay, I'm done installing dot files!"
 ```
 
-## Docker
+## Install (Manual)
 
-Also, you may actually run the docker image hosted on GitHub Container Registry:
-
-```bash
-docker run -p 3000:3000 ghcr.io/katsuki-yuri/website:latest
-```
+WIP blyat. Stay tuned!
 
 ## License
 
