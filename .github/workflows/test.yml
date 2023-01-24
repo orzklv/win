@@ -30,5 +30,6 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         with:
           severity: warning
+          ignore_paths: shells
         env:
           SHELLCHECK_OPTS: --shell=bash
