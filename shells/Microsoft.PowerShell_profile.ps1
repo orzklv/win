@@ -14,9 +14,3 @@ New-Alias -Name j -Value just.exe
 New-Alias -Name open -Value explorer.exe
 New-Alias -Name top -Value btop
 New-Alias -Name vim -Value helix
-
-# Functions
-# function cxsmxs {
-#     ssh cxsmxs
-# }
-
