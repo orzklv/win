@@ -25,12 +25,12 @@ ForEach ($App in $CargoApps) {
 # Check if the folder AppData\Roaming\lsd and config.yaml exists, if not create it and copy the config.yaml file at ./config/lsd/config.yaml:
 If (!(Test-Path -Path $Env:APPDATA\lsd)) {
     New-Item -ItemType Directory -Path $Env:APPDATA\lsd
-    Copy-Item -Path ./config/lsd/config.yaml -Destination $Env:APPDATA\lsd
+    Copy-Item -Path ./.config/lsd/config.yaml -Destination $Env:APPDATA\lsd
 }
 
 # Check if topgrade.toml exists at AppData\Roaming, if not copy the file at ./config/windows.topgrade.toml as topgrade.toml:
 If (!(Test-Path -Path $Env:APPDATA\topgrade.toml)) {
-    Copy-Item -Path ./config/windows.topgrade.toml -Destination $Env:APPDATA\topgrade.toml
+    Copy-Item -Path ./.config/windows.topgrade.toml -Destination $Env:APPDATA\topgrade.toml
 }
 
 # Move ./shells/Microsoft.PowerShell_profile.ps1 to $PROFILE
