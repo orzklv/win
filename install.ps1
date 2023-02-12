@@ -38,3 +38,6 @@ Move-Item -Path ./shells/Microsoft.PowerShell_profile.ps1 -Destination $PROFILE
 
 # Override ./terms/Windows Terminal/settings.json with the one at AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 Copy-Item -Path ./terms/Windows Terminal/settings.json -Destination $Env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -Force
+
+# Done
+Write-Output "The installation has been successfully completed!"
