@@ -30,9 +30,21 @@ for shell and environments like zsh (arch-linux, macos), powershell (windows). I
 
 This process can be tough and easy at the same time depending on yourself... If you prefer trusting me and let me do all the dirty stuff, then just run the install script located on the root location of the project like this:
 
+### Linux (MacOS & Arch Linux)
+
 ```shell
 # I'm not evil, check the source code if you don't trust me!
-sudo ./install.sh && echo "Yay, I'm done installing dot files!"
+sudo ./install.sh
+```
+
+### Windows NT
+
+```shell
+# Run this if it's your first time opening terminal
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Install configurations
+./install.ps1
 ```
 
 ## Install (Manual)
