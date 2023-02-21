@@ -213,6 +213,7 @@ command -v gping > /dev/null && alias ping="gping"
 command -v hyperfine > /dev/null && alias time="hyperfine"
 command -v just > /dev/null && alias j="just"
 command -v just > /dev/null && alias make="just"
+command -v cargo > /dev/null && alias korgi="cargo"
 
 # Refresh
 alias refresh="source ~/.zshrc"
