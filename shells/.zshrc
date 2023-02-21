@@ -5,7 +5,7 @@
 # /_____/_/|_/ .___/\____/_/   \__/____/
 #           /_/
 
-# Comppiler related configs
+# Compiler related configs
 export LC_ALL=en_US.UTF-8
 export LSCOLORS=""
 export VISUAL=hx
@@ -17,8 +17,49 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
+# MacOS related homebrew exports
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+fi
+
+#    _____      __  __  _
+#   / ___/___  / /_/ /_(_)___  ____ ______
+#   \__ \/ _ \/ __/ __/ / __ \/ __ `/ ___/
+#  ___/ /  __/ /_/ /_/ / / / / /_/ (__  )
+# /____/\___/\__/\__/_/_/ /_/\__, /____/
+#                           /____/
+
+# Global settings
+setopt AUTO_CD
+setopt BEEP
+setopt HIST_BEEP
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
+setopt INTERACTIVE_COMMENTS
+setopt MAGIC_EQUAL_SUBST
+setopt NO_NO_MATCH
+setopt NOTIFY
+setopt NUMERIC_GLOB_SORT
+setopt PROMPT_SUBST
+setopt SHARE_HISTORY
+
+# History files
+HISTFILE=~/.zsh_history
+HIST_STAMPS=mm/dd/yyyy
+HISTSIZE=5000
+SAVEHIST=5000
+ZLE_RPROMPT_INDENT=0
+WORDCHARS=${WORDCHARS//\/}
+PROMPT_EOL_MARK=
+TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 
 #     ____  __            _
 #    / __ \/ /_  ______ _(_)___  _____
@@ -27,13 +68,24 @@ export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 # /_/   /_/\__,_/\__, /_/_/ /_/____/
 #               /____/
 
-# Zsh Autosuggestions
+# _  _|____.  _|_ _  _    _  _  _  __|_o _ ._  _
+# /__>| |(_||_||_(_)_>|_|(_|(_|(/__> |_|(_)| |_>
+#                         _| _|
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
-# Zsh Completions
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# _  _|____ _ ._ _ ._ | __|_o _ ._  _
+# /__>| |(_(_)| | ||_)|(/_|_|(_)| |_>
+#                  |
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
 autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
@@ -50,7 +102,9 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Zsh Syntax Highlighter
+# _  _|____  .__|_ _.__|_ o _ |_ |o _ |__|_ _ ._
+# /__>| |_>\/| ||_(_|><| ||(_|| |||(_|| ||_(/_|
+#          /                _|      _|
 typeset -gA ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=none
@@ -94,7 +148,12 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=magenta,bold
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
 ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 #     ______            __
 #    / ____/   ______ _/ /____
@@ -118,6 +177,7 @@ alias down="cd ~/Downloads"
 alias ..="cd .."
 alias ....="cd ../.."
 alias celar="clear"
+alias :q="exit"
 
 # Made with Rust
 command -v btop > /dev/null && alias top="btop"
@@ -147,6 +207,7 @@ command -v helix > /dev/null && alias vim="helix"
 alias ports="lsof -PiTCP -sTCP:LISTEN"
 command -v gitui > /dev/null && alias rit="gitui"
 command -v git > /dev/null && alias gch="git checkout"
+command -v xdg-open > /dev/null && alias open="xdg-open"
 command -v xclip > /dev/null && alias xclip="xclip -selection c"
 alias speedtest="curl -o /dev/null cachefly.cachefly.net/100mb.test"
 command -v git > /dev/null && alias git="git -c http.sslVerify=false"
@@ -190,147 +251,6 @@ brewster() {
 	fi
 }
 
-baka() {
-    _help() {
-    HELP_MESSAGE="baka
-Baka Yuri's bootstrapper
-Version: 0.1.0
-
-Usage: baka [pack]
-
-Commands:
-  starter   Install starter pack
-  developer Install developer pack
-  *         Help
-"
-
-    echo $HELP_MESSAGE
-    }
-
-    _installer() {
-        if [ -z "$1" ]; then
-		  echo "No pack supplied"
-		  return
-        fi
-
-        case "$1" in
-          s)
-            _pack=( starship btop bat exa procs rg fd gping hyperfine helix gitui )
-            ;;
-          d)
-            _pack=( frum jenv volta rustup deno just openjdk )
-            ;;
-          r)
-            _pack=( rustup just )
-            ;;
-          j)
-            _pack=( volta deno bun )
-            ;;
-          g)
-            _pack=( git gitui github gh )
-            ;;
-          *)
-            echo Unknown pack supplied
-            ;;
-        esac
-
-        for i in "${_pack[@]}"
-        do
-            if ! command -v "$i" &> /dev/null
-            then
-                brew install "$i"
-            fi
-        done
-
-        unset _pack
-    }
-
-    case "$1" in
-      starter|s)
-        _installer s
-        ;;
-      dev|d)
-        _installer d
-        ;;
-      rust|r)
-        _installer r
-        rustup set profile complete
-        rustup default nightly
-        ;;
-      github|g)
-        _installer g
-        _file=/etc/resolv.conf
-        if [[ -f "$_file" ]]; then
-            echo "$_file exists! removing..."
-        fi
-        unset _file
-        echo $GITCONFIG > ~/.gitconfig
-        ;;
-      *)
-        _help
-        ;;
-    esac
-
-    unset _help
-    unset _installer
-}
-
-# Do git pushes without any hustle
-lazygit() {
-	USAGE="
-lazygit [OPTION]... <msg>
-    GIT but lazy
-    Options:
-        --fixup <commit>        runs 'git commit --fixup <commit> [...]'
-        --amend                 runs 'git commit --amend --no-edit [...]'
-        -f, --force             runs 'git push --force-with-lease [...]'
-        -h, --help              show this help text
-"
-	while [ $# -gt 0 ]
-	do
-		key="$1"
-
-		case $key in
-			--fixup)
-				COMMIT="$2"
-				shift # past argument
-				shift # past value
-				;;
-			--amend)
-				AMEND=true
-				shift # past argument
-				;;
-			-f|--force)
-				FORCE=true
-				shift # past argument
-				;;
-			-h|--help)
-				echo "$USAGE"
-				EXIT=true
-				break
-				;;
-			*)
-				MESSAGE="$1"
-				shift # past argument
-				;;
-		esac
-	done
-	unset key
-	if [ -z "$EXIT" ]
-	then
-		git status .
-		git add .
-		if [ -n "$AMEND" ]
-		then
-			git commit --amend --no-edit
-		elif [ -n "$COMMIT" ]
-		then
-			git commit --fixup "$COMMIT"
-			GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash "$COMMIT"^
-		else
-			git commit -m "$MESSAGE"
-		fi
-		git push origin HEAD $([ -n "$FORCE" ] && echo '--force-with-lease')
-	fi
-	unset USAGE COMMIT MESSAGE AMEND FORCE
-}
+if [[ "$OSTYPE" != "darwin"* ]]; then
+	unset brewster
+fi
