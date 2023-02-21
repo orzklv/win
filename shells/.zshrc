@@ -11,6 +11,9 @@ export LSCOLORS=""
 export VISUAL=hx
 export EDITOR=$VISUAL
 
+# enable terminal linewrap
+setterm -linewrap on 2> /dev/null
+
 # Third party software & manager
 export GOPATH="$HOME/.go"
 export VOLTA_HOME="$HOME/.volta"
@@ -50,6 +53,23 @@ setopt NOTIFY
 setopt NUMERIC_GLOB_SORT
 setopt PROMPT_SUBST
 setopt SHARE_HISTORY
+
+# Key bindings
+bindkey -e
+bindkey '^U' backward-kill-line
+bindkey '^[[2~' overwrite-mode
+bindkey '^[[3~' delete-char
+bindkey '^[[H' beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[3;5~' kill-word
+bindkey '^[[5~' beginning-of-buffer-or-history
+bindkey '^[[6~' end-of-buffer-or-history
+bindkey '^[[Z' undo
+bindkey ' ' magic-space
 
 # History files
 HISTFILE=~/.zsh_history
