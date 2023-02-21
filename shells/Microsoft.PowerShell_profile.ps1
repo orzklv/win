@@ -14,3 +14,11 @@ New-Alias -Name j -Value just.exe
 New-Alias -Name open -Value explorer.exe
 New-Alias -Name top -Value btop
 New-Alias -Name vim -Value helix
+
+Function update {
+    $pwd = Get-Location
+    cd $Env:APPDATA\.dots
+    git pull
+    cd $pwd
+    Remove-Variable pwd
+}

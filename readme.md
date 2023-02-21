@@ -34,7 +34,7 @@ This process can be tough and easy at the same time depending on yourself... If 
 
 ```shell
 # I'm not evil, check the source code if you don't trust me!
-sudo ./install.sh
+curl -fsSL https://dottu.katsuki.moe/install.sh | sh
 ```
 
 ### Windows NT
@@ -44,7 +44,7 @@ sudo ./install.sh
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # Install configurations
-./install.ps1
+irm https://dottu.katsuki.moe/install.ps1 | iex
 ```
 
 ## Install (Manual)
