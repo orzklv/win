@@ -51,7 +51,6 @@ irm https://dottu.katsuki.moe/install.ps1 | iex
 
 Just copy-paste configs that you would need. You may use symlinks to prepend to the repository and then update the repo to get the latest changes.
 
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
