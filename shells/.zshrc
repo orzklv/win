@@ -19,6 +19,7 @@ export GOPATH="$HOME/.go"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
+export PATH="$HOME/.tools/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # MacOS related homebrew exports
@@ -237,41 +238,3 @@ command -v git > /dev/null && alias gc="git -c http.sslVerify=false clone"
 # Updating the system
 command -v pacman > /dev/null && alias update="sudo pacman -Syyu"
 command -v softwareupdate > /dev/null && alias update="softwareupdate"
-
-
-#     ______                 __  _
-#    / ____/_  ______  _____/ /_(_)___  ____  _____
-#   / /_  / / / / __ \/ ___/ __/ / __ \/ __ \/ ___/
-#  / __/ / /_/ / / / / /__/ /_/ / /_/ / / / (__  )
-# /_/    \__,_/_/ /_/\___/\__/_/\____/_/ /_/____/
-
-# Start googling from terminal
-google() {
-    if [ -z "$1" ]; then
-        echo "No argument supplied"
-        return
-    fi
-    echo "Searching for $@"
-    search_string="$@"
-    open "https://www.google.com/search?q=$search_string"
-}
-
-# Additional helper to manage brew
-brewster() {
-	if [ -z "$1" ]; then
-		echo "No argument supplied"
-		return
-	fi
-	if [ "$1" = "clean" ]; then
-		brew leaves > brew.txt
-	elif [ "$1" = "detail" ]; then
-		brew leaves | xargs -n1 brew desc > desc.txt
-	else
-		echo "Invalid argument"
-		return
-	fi
-}
-
-if [[ "$OSTYPE" != "darwin"* ]]; then
-	unset brewster
-fi
