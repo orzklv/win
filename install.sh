@@ -1,6 +1,9 @@
 # Install the dotfiles
 git clone https://github.com/katsuki-yuri/dots.git ~/.dots
 
+# Install additional tools
+git clone https://github.com/katsuki-yuri/tools.git ~/.tools
+
 # Install zsh config
 ln -sf ~/.dots/shells/.zshrc ~/.zshrc
 
