@@ -239,6 +239,7 @@ command -v git > /dev/null && alias gc="git -c http.sslVerify=false clone"
 command -v pacman > /dev/null && alias update="sudo pacman -Syyu"
 command -v softwareupdate > /dev/null && alias update="softwareupdate"
 
+# Updating shell and dotfiles
 update-shell() {
 	# Save the current directory
 	local current_dir=$(pwd)
