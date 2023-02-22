@@ -238,3 +238,18 @@ command -v git > /dev/null && alias gc="git -c http.sslVerify=false clone"
 # Updating the system
 command -v pacman > /dev/null && alias update="sudo pacman -Syyu"
 command -v softwareupdate > /dev/null && alias update="softwareupdate"
+
+update-shell() {
+	# Save the current directory
+	local current_dir=$(pwd)
+
+	# Go to the dotfiles directory
+	cd ~/.dots
+
+	# Update the repository
+	git pull
+
+	# Get back and clean the directory
+	cd $current_dir
+	unset current_dir
+}
