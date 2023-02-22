@@ -243,11 +243,18 @@ update-shell() {
 	# Save the current directory
 	local current_dir=$(pwd)
 
-	# Go to the dotfiles directory
-	cd ~/.dots
+	directories=(
+		"~/.dots"
+		"~/.tools"
+	)
 
-	# Update the repository
-	git pull
+	for directory in $directories; do
+		# Go to the dotfiles directory
+		cd $directory
+
+		# Update the repository
+		git pull
+	done
 
 	# Get back and clean the directory
 	cd $current_dir
