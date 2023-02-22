@@ -49,7 +49,7 @@ irm https://dottu.katsuki.moe/install.ps1 | iex
 
 ## Install (Manual)
 
-WIP blyat. Stay tuned!
+Just copy paste configs that you would need. You may use symlinks to prepend to the repository and then update the repo to get the latest changes.
 
 ## License
 
