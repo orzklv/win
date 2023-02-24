@@ -10,6 +10,24 @@ ln -sf ~/.dots/shells/.zshrc ~/.zshrc
 # Install helix configs
 ln -sf ~/.dots/.config/helix ~/.config
 
+# If it's arch linux, install paru aur helper
+if [ "$(uname)" == "Linux" ]; then
+    if [ -f /etc/arch-release ]; then
+        # Install rust
+        sudo pacman -S rustup
+        rustup set profile complete
+        rustup default nightly
+
+        # Install paru
+        sudo pacman -S --needed base-devel
+        git clone https://aur.archlinux.org/paru.git
+        cd paru || (echo "Can't enter to paru's git location" && exit 1)
+        makepkg -si
+        cd ..
+        rm -rf paru
+    fi
+fi
+
 # If it's linux, not macos
 if [ "$(uname)" == "Linux" ]; then
     # Install bspwm config
