@@ -26,6 +26,27 @@ if [ "$(uname)" == "Linux" ]; then
         cd ..
         rm -rf paru
     fi
+    # if it's ubuntu
+    if [ -f /etc/lsb-release ]; then
+        # Update and upgrade
+        sudo apt -y update
+        sudo apt -y upgrade
+
+        # Install rust & rustup
+        curl https://sh.rustup.rs -sSf | sh -s -- -y
+        source "$HOME/.cargo/env"
+
+        # Install deno
+        curl -fsSL https://deno.land/install.sh | sh
+        export DENO_INSTALL="/home/codespace/.deno"
+        export PATH="$DENO_INSTALL/bin:$PATH"
+
+        # Install volta
+        curl https://get.volta.sh | bash
+        export VOLTA_HOME="$HOME/.volta"
+        export PATH="$VOLTA_HOME/bin:$PATH"
+        volta install node@lts pnpm prettier
+    fi
 fi
 
 # If it's linux, not macos
