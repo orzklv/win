@@ -20,6 +20,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.tools/bin:$PATH"
+export PATH="$HOME/.go/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # MacOS related homebrew exports
