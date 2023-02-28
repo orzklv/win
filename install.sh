@@ -68,34 +68,3 @@ if [ "$(uname)" == "Linux" ]; then
     mkdir -p ~/.config/alacritty
     ln -sf ~/.dots/terms/Alacritty/alacritty.yml ~/.config/alacritty/
 fi
-
-# Installing packages
-
-arch_packages=(
-    "btop"
-    "bat"
-    "exa"
-    "procs"
-    "ripgrep"
-    "fd"
-    "gping"
-    "hyperfine"
-    "just"
-    "helix"
-)
-
-# ubuntu_packages
-ubuntu_packages=(
-    "btop"
-    "bat"
-    "exa"
-    "procs"
-    "ripgrep"
-    "fd-find"
-    "gping"
-    "hyperfine"
-    "just"
-    "helix"
-)
-
-sudo pacman -S "${arch_packages[@]}"
