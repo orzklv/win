@@ -27,6 +27,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
   export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+  export PATH="$(brew --prefix)/opt/llvm/bin:$PATH"
+  
+  export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 fi
 
 #    _____      __  __  _
