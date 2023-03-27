@@ -8,7 +8,7 @@ git clone https://github.com/katsuki-yuri/tools.git ~/.tools
 ln -sf ~/.dots/shells/.zshrc ~/.zshrc
 
 # Install helix configs
-ln -sf ~/.dots/.config/helix ~/.config
+ln -sf ~/.dots/.config/helix ~/.config/helix
 
 # If it's arch linux, install paru aur helper
 if [ "$(uname)" == "Linux" ]; then
@@ -53,16 +53,16 @@ fi
 # If it's linux, not macos
 if [ "$(uname)" == "Linux" ]; then
 	# Install bspwm config
-	ln -sf ~/.dots/.config/bspwm ~/.config
+	ln -sf ~/.dots/.config/bspwm ~/.config/bspwm
 
 	# Install sxhkd config
-	ln -sf ~/.dots/.config/sxhkd ~/.config
+	ln -sf ~/.dots/.config/sxhkd ~/.config/sxhkd
 
 	# Install picom config
 	ln -sf ~/.dots/.config/picom.conf ~/.config
 
 	# Install paru config
-	ln -sf ~/.dots/.config/paru ~/.config
+	ln -sf ~/.dots/.config/paru ~/.config/paru
 
 	# Install alacritty config
 	mkdir -p ~/.config/alacritty
@@ -84,7 +84,7 @@ if [ -f /etc/arch-release ]; then
 		"helix"
 		"starship"
 		"tealdeer"
-		"topgrade"
+		"topgrade-bin"
 		"volta-bin"
 	)
 
