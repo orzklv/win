@@ -193,6 +193,8 @@ command -v starship > /dev/null && eval "$(starship init zsh)"
 command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
 command -v frum > /dev/null && eval "$(frum init)"
 command -v jenv > /dev/null && eval "$(jenv init -)"
+command -v github-copilot-cli > /dev/null && eval "$(github-copilot-cli alias -- "$0")"
+
 
 #     ___    ___
 #    /   |  / (_)___ _________  _____
