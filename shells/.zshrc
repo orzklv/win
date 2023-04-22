@@ -22,6 +22,7 @@ export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.tools/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
 
 # MacOS related homebrew exports
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -194,7 +195,6 @@ command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
 command -v frum > /dev/null && eval "$(frum init)"
 command -v jenv > /dev/null && eval "$(jenv init -)"
 command -v github-copilot-cli > /dev/null && eval "$(github-copilot-cli alias -- "$0")"
-
 
 #     ___    ___
 #    /   |  / (_)___ _________  _____
