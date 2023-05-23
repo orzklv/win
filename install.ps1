@@ -12,7 +12,7 @@ $Apps = @(
     "Casey.Just",
     "Microsoft.VisualStudioCode",
     "Microsoft.VisualStudio.2022.BuildTools",
-    "winget install Helix.Helix"
+    "Helix.Helix"
 )
 
 ForEach ($App in $Apps) {
