@@ -13,7 +13,7 @@ New-Alias -Name celar -Value clear
 New-Alias -Name j -Value just.exe
 New-Alias -Name open -Value explorer.exe
 New-Alias -Name top -Value btop
-New-Alias -Name vim -Value helix
+New-Alias -Name vim -Value hx
 
 Function update {
     $pwd = Get-Location
