@@ -10,7 +10,8 @@ $Apps = @(
     "Volta.Volta",
     "Starship.Starship",
     "Microsoft.VisualStudioCode",
-    "Microsoft.VisualStudio.2022.BuildTools"
+    "Microsoft.VisualStudio.2022.BuildTools",
+    "winget install Helix.Helix"
 )
 
 ForEach ($App in $Apps) {
