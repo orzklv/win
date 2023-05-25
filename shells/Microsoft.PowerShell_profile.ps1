@@ -15,6 +15,7 @@ New-Alias -Name open -Value explorer.exe
 New-Alias -Name top -Value btop
 New-Alias -Name vim -Value hx
 
+# Update dot configurations
 Function update {
     $pwd = Get-Location
     cd $Env:APPDATA\.dots
