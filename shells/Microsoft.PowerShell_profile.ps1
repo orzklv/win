@@ -24,6 +24,7 @@ Function update {
     Remove-Variable pwd
 }
 
+# which command equivalent for powershell
 function which($name){
     $path = (Get-Command $name).Source
     if ($path) { 
