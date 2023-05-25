@@ -22,3 +22,12 @@ Function update {
     cd $pwd
     Remove-Variable pwd
 }
+
+function which($name){
+    $path = (Get-Command $name).Source
+    if ($path) { 
+        return $path
+    } else { 
+        throw "Command $name not found." 
+    }
+}
