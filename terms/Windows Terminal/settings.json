@@ -90,6 +90,31 @@
                 "opacity": 40,
                 "source": "Windows.Terminal.Wsl",
                 "useAcrylic": true
+            },
+            {
+                "altGrAliasing": true,
+                "antialiasingMode": "grayscale",
+                "closeOnExit": "automatic",
+                "colorScheme": "Tango Dark",
+                "commandline": "cmd.exe /c \"set MSYSTEM=MINGW64&& C:\\msys64\\usr\\bin\\bash.exe --login\"",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font Mono",
+                    "size": 9.0,
+                    "weight": "normal"
+                },
+                "guid": "{ef2fa78b-13f1-4909-b929-f1b8c92c7243}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "C:\\msys64\\mingw64.ico",
+                "name": "MingW64",
+                "opacity": 40,
+                "padding": "8, 8, 8, 8",
+                "snapOnInput": true,
+                "startingDirectory": "C:\\msys64\\home\\Sakhib",
+                "tabTitle": "\u30af\u30bd\u5974\u96b7",
+                "useAcrylic": true
             }
         ]
     },
