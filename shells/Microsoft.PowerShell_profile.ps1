@@ -12,7 +12,6 @@ New-Alias -Name sl -Value lsd
 New-Alias -Name celar -Value clear
 New-Alias -Name j -Value just.exe
 New-Alias -Name open -Value explorer.exe
-New-Alias -Name top -Value btop
 New-Alias -Name vim -Value hx
 
 # Update dot configurations
@@ -34,6 +33,7 @@ function which($name){
     }
 }
 
+# Edit dot configurations
 function edit($name){
     $DOTS = "$Env:APPDATA\.dots"
     $KEYS = "$Env:APPDATA\.keys"
@@ -62,4 +62,9 @@ function edit($name){
             echo $HELP
         }
     }
+}
+
+# Top as btop
+function top {
+    sudo btop
 }
