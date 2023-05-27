@@ -33,3 +33,33 @@ function which($name){
         throw "Command $name not found." 
     }
 }
+
+function edit($name){
+    $DOTS = "$Env:APPDATA\.dots"
+    $KEYS = "$Env:APPDATA\.keys"
+    $TOOLS = "$Env:APPDATA\.tools"
+
+    $HELP = 
+@"
+    Usage: edit <name>
+    Where <name> is one of the following:
+        dots
+        keys
+        tools
+"@
+
+    switch ($name) {
+        "dots" {
+            code $DOTS
+        }
+        "keys" {
+            code $KEYS
+        }
+        "tools" {
+            code $TOOLS
+        }
+        default {
+            echo $HELP
+        }
+    }
+}
