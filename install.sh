@@ -25,6 +25,25 @@ if [ "$(uname)" == "Linux" ]; then
 		makepkg -si
 		cd ..
 		rm -rf paru
+
+		arch_packages=(
+			"btop"
+			"bat"
+			"exa"
+			"procs"
+			"ripgrep"
+			"fd"
+			"gping"
+			"hyperfine"
+			"just"
+			"helix"
+			"starship"
+			"tealdeer"
+			"topgrade-bin"
+			"volta-bin"
+		)
+
+		paru -S "${arch_packages[@]}"
 	fi
 
 	# If it's ubuntu
@@ -48,10 +67,7 @@ if [ "$(uname)" == "Linux" ]; then
 		export PATH="$VOLTA_HOME/bin:$PATH"
 		volta install node@lts pnpm prettier
 	fi
-fi
 
-# If it's linux, not macos
-if [ "$(uname)" == "Linux" ]; then
 	# Install bspwm config
 	ln -sf ~/.dots/.config/bspwm ~/.config/bspwm
 
@@ -67,26 +83,4 @@ if [ "$(uname)" == "Linux" ]; then
 	# Install alacritty config
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/.dots/terms/Alacritty/alacritty.yml ~/.config/alacritty/
-fi
-
-# Installing packages on arch linux
-if [ -f /etc/arch-release ]; then
-	arch_packages=(
-		"btop"
-		"bat"
-		"exa"
-		"procs"
-		"ripgrep"
-		"fd"
-		"gping"
-		"hyperfine"
-		"just"
-		"helix"
-		"starship"
-		"tealdeer"
-		"topgrade-bin"
-		"volta-bin"
-	)
-
-	paru -S "${arch_packages[@]}"
 fi
