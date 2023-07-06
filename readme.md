@@ -1,14 +1,14 @@
 <header>
-<img src="https://www.katsuki.moe/favicons/pinned.svg" alt="logo" height="100" align="left">
+<img src="https://www.orzklv.uz/favicons/logo.png" alt="logo" height="100" align="left">
 <h1 style="display: inline">Dottu Desu Ka!</h1>
 
 My dotfiles for my machines to maintain my own development environment.
 
 </header>
 
-[![GitHub top language](https://img.shields.io/github/languages/top/katsuki-yuri/dots?style=flat-square&logo=github)](https://github.com/katsuki-yuri/dots)
-[![Channel](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/yurionblog)
-[![Shellcheck CI](https://github.com/katsuki-yuri/dots/actions/workflows/test.yml/badge.svg)](https://github.com/katsuki-yuri/dots/actions/workflows/test.yml)
+[![GitHub top language](https://img.shields.io/github/languages/top/orzklv/dots?style=flat-square&logo=github)](https://github.com/orzklv/dots)
+[![Channel](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/orzklvb)
+[![Shellcheck CI](https://github.com/orzklv/dots/actions/workflows/test.yml/badge.svg)](https://github.com/orzklv/dots/actions/workflows/test.yml)
 
 ## About
 
@@ -34,7 +34,7 @@ This process can be tough and easy at the same time depending on yourself... If 
 
 ```shell
 # I'm not evil, check the source code if you don't trust me!
-curl -fsSL https://dottu.katsuki.moe/install.sh | sh
+curl -fsSL https://dots.orzklv.uz/install.sh | sh
 ```
 
 ### Windows NT
@@ -44,7 +44,7 @@ curl -fsSL https://dottu.katsuki.moe/install.sh | sh
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # Install configurations
-irm https://dottu.katsuki.moe/install.ps1 | iex
+irm https://dots.orzklv.uz/install.ps1 | iex
 ```
 
 ## Install (Manual)

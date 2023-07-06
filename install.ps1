@@ -2,7 +2,7 @@
 winget install Git.Git
 
 # Clone a repository from GitHub to ~/.dots
-git clone https://github.com/katsuki-yuri/dots.git "$Env:APPDATA\.dots"
+git clone https://github.com/orzklv/dots.git "$Env:APPDATA\.dots"
 
 # Install all required applications using winget
 $Apps = @(
