@@ -1,6 +1,6 @@
 <header>
 <img src="https://www.orzklv.uz/favicons/logo.png" alt="logo" height="100" align="left">
-<h1 style="display: inline">Dottu Desu Ka!</h1>
+<h1 style="display: inline">Dot Files!</h1>
 
 My dotfiles for my machines to maintain my own development environment.
 
