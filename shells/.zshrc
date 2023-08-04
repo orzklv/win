@@ -208,6 +208,7 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias celar="clear"
 alias :q="exit"
+alias ssh-hosts="grep -P \"^Host ([^*]+)$\" $HOME/.ssh/config | sed 's/Host //'"
 
 # Made with Rust
 command -v btop > /dev/null && alias top="btop"
