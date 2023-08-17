@@ -209,6 +209,7 @@ alias ....="cd ../.."
 alias celar="clear"
 alias :q="exit"
 alias ssh-hosts="grep -P \"^Host ([^*]+)$\" $HOME/.ssh/config | sed 's/Host //'"
+alias xcode-beta-update="xcodes install --latest-prerelease"
 
 # Made with Rust
 command -v btop > /dev/null && alias top="btop"
