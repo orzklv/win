@@ -1,3 +1,6 @@
+# Give access to execue scripts
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 # Install git before proceeding with work
 winget install Git.Git
 
@@ -13,7 +16,9 @@ $Apps = @(
     "Microsoft.VisualStudioCode",
     "Microsoft.VisualStudio.2022.BuildTools",
     "Helix.Helix",
-    "GitHub.GitHubDesktop"
+    "GitHub.GitHubDesktop",
+    "DEVCOM.JetBrainsMonoNerdFont",
+    "direnv.direnv"
 )
 
 ForEach ($App in $Apps) {
