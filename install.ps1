@@ -18,7 +18,8 @@ $Apps = @(
     "Helix.Helix",
     "GitHub.GitHubDesktop",
     "DEVCOM.JetBrainsMonoNerdFont",
-    "direnv.direnv"
+    "direnv.direnv",
+    "eza-community.eza"
 )
 
 ForEach ($App in $Apps) {
@@ -27,7 +28,6 @@ ForEach ($App in $Apps) {
 
 # Install cargo apps
 $CargoApps = @(
-    "lsd",
     "topgrade"
 )
 
@@ -41,12 +41,6 @@ Function Remove-FileIfExists($Path) {
         Remove-Item -Path $Path -Force -Recurse
     }
 }
-
-# Check if the folder AppData\Roaming\lsd exists, if not create it and create symlink to the config.yaml file at APPDATA\.dots\.config\lsd
-If (!(Test-Path -Path "$Env:APPDATA\lsd")) {
-    New-Item -ItemType Directory -Path "$Env:APPDATA\lsd"
-}
-New-Item -ItemType SymbolicLink -Path "$Env:APPDATA\lsd\config.yaml" -Target "$Env:APPDATA\.dots\.config\lsd\config.yaml"
 
 # Check if topgrade.toml exists at AppData\Roaming, if not copy the file at ./config/windows.topgrade.toml as topgrade.toml:
 If (!(Test-Path -Path "$Env:APPDATA\topgrade.toml")) {

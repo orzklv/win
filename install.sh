@@ -42,7 +42,7 @@ if [ "$(uname)" == "Linux" ]; then
 		arch_packages=(
 			"btop"
 			"bat"
-			"exa"
+			"eza"
 			"procs"
 			"ripgrep"
 			"fd"
@@ -122,7 +122,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	brew_packages=(
 		"btop"
 		"bat"
-		"exa"
+		"eza"
 		"procs"
 		"ripgrep"
 		"fd"
