@@ -7,8 +7,8 @@ Invoke-Expression (&starship init powershell)
 # Alias ls 
 Remove-Item alias:ls -Force
 Remove-Item alias:sl -Force
-New-Alias -Name ls -Value lsd
-New-Alias -Name sl -Value lsd
+New-Alias -Name ls -Value eza
+New-Alias -Name sl -Value eza
 New-Alias -Name celar -Value clear
 New-Alias -Name j -Value just.exe
 New-Alias -Name open -Value explorer.exe
