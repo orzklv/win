@@ -3,7 +3,7 @@
 #assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["system", "wsl", "node"]
+disable = ["system", "wsl", "node", "pnpm", "vscode"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]
