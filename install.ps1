@@ -44,7 +44,7 @@ Function Remove-FileIfExists($Path) {
 
 # Check if topgrade.toml exists at AppData\Roaming, if not copy the file at ./config/windows.topgrade.toml as topgrade.toml:
 If (!(Test-Path -Path "$Env:APPDATA\topgrade.toml")) {
-    New-Item -ItemType SymbolicLink -Path "$Env:APPDATA\topgrade.toml" -Target "$Env:APPDATA\.dots\.config\windows.topgrade.toml"
+    New-Item -ItemType SymbolicLink -Path "$Env:APPDATA\topgrade.toml" -Target "$Env:APPDATA\.dots\.config\topgrade.toml"
 }
 
 # Move ./shells/Microsoft.PowerShell_profile.ps1 to $PROFILE
@@ -56,11 +56,11 @@ If (!(Test-Path -Path "$Env:USERPROFILE\Documents\WindowsPowerShell")) {
 }
 
 # Create a symlink to the Microsoft.PowerShell_profile.ps1 file at APPDATA\.dots\shells\Microsoft.PowerShell_profile.ps1
-New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$Env:APPDATA\.dots\shells\Microsoft.PowerShell_profile.ps1"
+New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$Env:APPDATA\.dots\Profile\Microsoft.PowerShell_profile.ps1"
 
 # Override ./terms/Windows Terminal/settings.json with the one at AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 Remove-FileIfExists("$Env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json")
-New-Item -ItemType SymbolicLink -Path "$Env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$Env:APPDATA\.dots\terms\Windows Terminal\settings.json"
+New-Item -ItemType SymbolicLink -Path "$Env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$Env:APPDATA\.dots\Terminal\settings.json"
 
 # Done
 Write-Output "The installation has been successfully completed!"
