@@ -4,7 +4,7 @@ Invoke-Expression (&starship init powershell)
 # Initialize volta
 (& volta completions powershell) | Out-String | Invoke-Expression
 
-# Alias ls 
+# Alias ls
 Remove-Item alias:ls -Force
 Remove-Item alias:sl -Force
 New-Alias -Name ls -Value eza
@@ -13,23 +13,16 @@ New-Alias -Name celar -Value clear
 New-Alias -Name j -Value just.exe
 New-Alias -Name open -Value explorer.exe
 New-Alias -Name vim -Value hx
-
-# Update dot configurations
-Function update {
-    $pwd = Get-Location
-    cd $Env:APPDATA\.dots
-    git pull
-    cd $pwd
-    Remove-Variable pwd
-}
+New-Alias -Name update -Value topgrade.exe
+New-Alias -Name upgrade -Value topgrade.exe
 
 # which command equivalent for powershell
 function which($name){
     $path = (Get-Command $name).Source
-    if ($path) { 
+    if ($path) {
         return $path
-    } else { 
-        throw "Command $name not found." 
+    } else {
+        throw "Command $name not found."
     }
 }
 
@@ -39,7 +32,7 @@ function edit($name){
     $KEYS = "$Env:APPDATA\.keys"
     $TOOLS = "$Env:APPDATA\.tools"
 
-    $HELP = 
+    $HELP =
 @"
     Usage: edit <name>
     Where <name> is one of the following:
