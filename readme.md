@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <h3 align="center">My dotfiles for my Windows 10/11 machines to maintain my own development environment.</h3>
+    <h3 align="center">Personal dotfiles for my Windows 10/11 machines.</h3>
 </p>
 
 <p align="center">
