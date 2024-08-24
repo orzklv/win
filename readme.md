@@ -1,21 +1,23 @@
-<header>
-<img src="https://www.orzklv.uz/favicons/logo.png" alt="logo" height="100" align="left">
-<h1 style="display: inline">Dot Files!</h1>
+<p align="center">
+    <img src=".github/assets/header.png" alt="Orzklv's {Windows}">
+</p>
 
-My dotfiles for my machines to maintain my own development environment.
+<p align="center">
+    <h3 align="center">My dotfiles for my Windows 10/11 machines to maintain my own development environment.</h3>
+</p>
 
-</header>
-
-[![GitHub top language](https://img.shields.io/github/languages/top/orzklv/dots?style=flat-square&logo=github)](https://github.com/orzklv/dots)
-[![Channel](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/orzklvb)
-[![Shellcheck CI](https://github.com/orzklv/dots/actions/workflows/test.yml/badge.svg)](https://github.com/orzklv/dots/actions/workflows/test.yml)
+<p align="center">
+    <img align="center" src="https://img.shields.io/github/languages/top/orzklv/win?style=flat&logo=nixos&logoColor=ffffff&labelColor=242424&color=242424" alt="Top Used Language">
+    <a href="https://t.me/orzklvb"><img align="center" src="https://img.shields.io/badge/Chat-grey?style=flat&logo=telegram&logoColor=ffffff&labelColor=242424&color=242424" alt="Telegram Channel"></a>
+    <a href="https://github.com/orzklv/win/actions/workflows/test.yml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/orzklv/win/test.yml?style=flat&logo=github&logoColor=ffffff&labelColor=242424&color=242424" alt="Test CI"></a>
+</p>
 
 ## About
 
 In this repository I keep all my configurations and dot files to maintain my healthy development environment for any case. It contains configurations
 for shell and environments like zsh (arch-linux, macos), powershell (windows). It comes with installer to shorten my time spending on set up.
 
-> Everytime I installed my dev env manually by myself, I started feeling like a garbage myself... So here you are!
+> Installing everything manually by hand is a huge pain in da ass. Why not let an installer handle this?!
 
 ## Features
 
@@ -30,21 +32,12 @@ for shell and environments like zsh (arch-linux, macos), powershell (windows). I
 
 This process can be tough and easy at the same time depending on yourself... If you prefer trusting me and let me do all the dirty stuff, then just run the install script located on the root location of the project like this:
 
-### Linux (MacOS & Arch Linux)
-
-```shell
-# I'm not evil, check the source code if you don't trust me!
-curl -fsSL https://dots.orzklv.uz/install.sh | sh
-```
-
-### Windows NT
-
 ```shell
 # Run this if it's your first time opening terminal
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # Install configurations
-irm https://dots.orzklv.uz/install.ps1 | iex
+irm https://raw.githubusercontent.com/orzklv/win/master/install.ps1 | iex
 ```
 
 ## Install (Manual)
