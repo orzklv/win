@@ -5,7 +5,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 winget install Git.Git
 
 # Clone a repository from GitHub to ~/.dots
-git clone https://github.com/orzklv/dots.git "$Env:APPDATA\.dots"
+git clone https://github.com/orzklv/win.git "$Env:APPDATA\.dots"
 
 # Install all required applications using winget
 $Apps = @(
@@ -19,20 +19,12 @@ $Apps = @(
     "GitHub.GitHubDesktop",
     "DEVCOM.JetBrainsMonoNerdFont",
     "direnv.direnv",
-    "eza-community.eza"
+    "eza-community.eza",
+    "topgrade-rs.topgrade"
 )
 
 ForEach ($App in $Apps) {
     winget install $App
-}
-
-# Install cargo apps
-$CargoApps = @(
-    "topgrade"
-)
-
-ForEach ($App in $CargoApps) {
-    cargo install $App
 }
 
 # Create a function that checks if file or folder on param exists, if exists delete it
