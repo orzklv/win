@@ -98,21 +98,9 @@
                 "opacity": 40,
                 "padding": "8, 8, 8, 8",
                 "snapOnInput": true,
-                "startingDirectory": "C:\\msys64\\home\\Sakhib",
+                "startingDirectory": "C:\\msys64\\home\\Sokhibjon",
                 "tabTitle": "\u30af\u30bd\u5974\u96b7",
                 "useAcrylic": true
-            },
-            {
-                "guid": "{e88aacb4-65dc-5d9c-9af6-1ebdd51661bd}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{f979f57f-04de-52bb-b7de-a70e97fba0c1}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
