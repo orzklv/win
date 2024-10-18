@@ -44,7 +44,7 @@
         "list": 
         [
             {
-                "colorScheme": "Tango Dark",
+                "colorScheme": "Tango Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "font": 
                 {
@@ -81,7 +81,7 @@
                 "altGrAliasing": true,
                 "antialiasingMode": "grayscale",
                 "closeOnExit": "automatic",
-                "colorScheme": "Tango Dark",
+                "colorScheme": "Tango Light",
                 "commandline": "cmd.exe /c \"set MSYSTEM=MINGW64&& C:\\msys64\\usr\\bin\\bash.exe --login\"",
                 "cursorShape": "bar",
                 "font": 
@@ -314,5 +314,6 @@
             "yellow": "#808000"
         }
     ],
+    "theme": "light",
     "themes": []
 }
